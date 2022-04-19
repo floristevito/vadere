@@ -10,7 +10,9 @@ public class Source extends ScenarioElement {
 	private AttributesSource attributes;
 
 	public Source(AttributesSource attributes) {
+		// attributes.setMaxSpawnNumberTotal(attributes.getMaxSpawnNumberTotal()/attributes.getDistributionParameters().get("updateFrequency").asInt());
 		this.attributes = attributes;
+		this.attributes.setMaxSpawnNumberTotal(this.attributes.getMaxSpawnNumberTotal()/this.attributes.getDistributionParameters().get("updateFrequency").asInt());
 	}
 
 	@Override
